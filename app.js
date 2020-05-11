@@ -21,7 +21,7 @@ function getBots(req, res){
 
         db.collection('bots').find({}).toArray((err, docs) => {
             assert.equal(null, err);
-            res.send(docs)
+            res.send(JSON.stringify(docs))
         })
     })
 };
@@ -35,7 +35,7 @@ function getBotById(req, res){
             {id:req.params.id}
             ).toArray((err, docs) => {
                 assert.equal(null, err);
-                res.send(docs);
+                res.send(JSON.stringify(docs));
         });
     });
 };
@@ -65,6 +65,7 @@ function postMessage(req, res){
         }, (err, r) => {
             assert.equal(null, err);
         });
+        res.send({status: 'OK'})
     });
 };
 
@@ -75,7 +76,7 @@ function getMessages(req, res){
 
         db.collection('messages').find({}).toArray((err, docs) => {
             assert.equal(null, err);
-            res.send(docs);
+            res.send(JSON.stringify(docs));
         });
     });
 };
@@ -87,7 +88,7 @@ function getMessageById(req, res){
 
         db.collection('messages').find({id:req.params.id}).toArray((err, docs) => {
             assert.equal(null, err);
-            res.send(docs);
+            res.send(JSON.stringify(docs));
         });
     });
 };
@@ -99,7 +100,7 @@ function getMessagesInConversationId(req, res){
 
         db.collection('messages').find({conversationId: req.params.conversationId}).toArray((err, docs) => {
             assert.equal(null, err);
-            res.send(docs);
+            res.send(JSON.stringify(docs));
         });
     });
 };
