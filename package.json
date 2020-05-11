@@ -1,0 +1,21 @@
+{
+  "name": "wipro-node",
+  "version": "1.0.0",
+  "description": "Assignment application",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bson": "^4.0.4",
+    "express": "^4.17.1",
+    "ibm-watson": "^5.5.0",
+    "mongodb": "^3.5.7"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vinicius Tonon",
+  "license": "MIT"
+}
